@@ -7,9 +7,7 @@
     <artifactId>Ratatouille</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>ar.edu.unlp.info.lifia.grupo4</groupId>
   <artifactId>Backend_Ratatouille</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>Backend_Ratatouille</name>
   <url>http://maven.apache.org</url>
   <properties>
