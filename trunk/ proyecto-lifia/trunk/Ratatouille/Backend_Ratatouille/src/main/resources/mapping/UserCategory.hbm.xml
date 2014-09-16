@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="UserCategory" table="USER_CATEGORY">
+		<id name="id" column="ID_USER_CATEGORY">
+			<generator class="native" />
+		</id>
+		<joined-subclass name="Visitor" table="VISITOR">
+			<key column="ID_USER_CATEGORY" />
+		</joined-subclass>
+		<joined-subclass name="Dinner" table="DINNER">
+			<key column="ID_USER_CATEGORY" />
+		</joined-subclass>
+		<joined-subclass name="Gourmet" table="GOURMET">
+			<key column="ID_USER_CATEGORY" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

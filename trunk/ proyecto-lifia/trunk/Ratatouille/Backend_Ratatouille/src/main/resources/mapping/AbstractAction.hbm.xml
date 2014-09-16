@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="AbstractAction" table="ABSTRACT_ACTION">
+		<id name="id" column="ID_ABSTRACT_ACTION">
+			<generator class="native" />
+		</id>
+	</class>
+</hibernate-mapping>

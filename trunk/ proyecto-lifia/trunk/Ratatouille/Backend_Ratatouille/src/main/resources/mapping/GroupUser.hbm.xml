@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="GroupUser" table="GROUP_USER">
+		<id name="id" column="ID_GROUP">
+			<generator class="native" />
+		</id>
+		<property name="name">
+			<column name="NAME" />
+		</property>
+		<set name="integrants" table="USER_GROUP_USER" inverse="true" cascade="all">
+			<key column="ID_GROUP" />
+			<many-to-many class="User" column="ID_USER"/>
+		</set>
+	</class>
+</hibernate-mapping>

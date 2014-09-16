@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="User" table="USER">
+		<id name="id" column="ID_USER">
+			<generator class="native" />
+		</id>
+		<property name="dni">
+			<column name="DNI" />
+		</property>
+		<property name="lastName">
+			<column name="LAST_NAME" />
+		</property>
+		<property name="score">
+			<column name="SCORE" />
+		</property>
+		<property name="name">
+			<column name="NAME" />
+		</property>
+
+		<many-to-one name="category" column="ID_CATEGORY_USER"
+			class="UserCategory" cascade="all" />
+
+		<many-to-one name="role" column="ROLE" cascade="all"
+			unique="true" not-null="true" />
+
+		<set name="groups" table="USER_GROUP_USER" cascade="all">
+			<key column="ID_USER" />
+			<many-to-many class="GroupUser" column="ID_GROUP" />
+		</set>
+
+		<set name="recommendations" cascade="all" inverse="true">
+			<key column="ID_USER" not-null="true" />
+			<one-to-many class="Recommendation" />
+		</set>
+
+
+		<set name="visits" cascade="all" inverse="true">
+			<key column="ID_USER" />
+			<one-to-many class="Visit" />
+		</set>
+
+
+	</class>
+</hibernate-mapping>
