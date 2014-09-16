@@ -9,7 +9,7 @@
 		<Root level="info">
 			<AppenderRef ref="Console" />
 		</Root>
-		<logger name="ar.edu.info.lifia.grupo4.model.DBLoader" level="trace" />
+		<logger name="ar.edu.info.lifia.grupo4.model.DBLoader" level="info" />
 		<Root level="info">
 			<AppenderRef ref="CONSOLE" />
 		</Root>
