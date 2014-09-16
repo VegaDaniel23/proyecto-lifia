@@ -12,5 +12,6 @@
   </properties>
   <modules>
     <module>Backend_Ratatouille</module>
+    <module>RichClient_Ratatouille</module>
   </modules>
 </project>
