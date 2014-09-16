@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="Restaurant" table="RESTAURANT">
+		<id name="id" column="ID_RESTAURANT">
+			<generator class="native" />
+		</id>
+
+		<property name="name">
+			<column name="NAME" />
+		</property>
+		<many-to-one name="owner" column="ID_ROL_RESPONSIBLE" not-null="true"
+			cascade="all" />
+
+		
+		<set name="comments" cascade="all">
+			<key column="ID_RESTAURANT" />
+			<one-to-many class="Comment" />
+		</set>
+		<set name="votes" cascade="all">
+			<key column="ID_RESTAURANT" />
+			<one-to-many class="Vote" />
+		</set>
+		<set name="visits" cascade="all" inverse="true">
+			<key column="ID_RESTAURANT" />
+			<one-to-many class="Visit" />
+		</set>
+
+	</class>
+</hibernate-mapping>

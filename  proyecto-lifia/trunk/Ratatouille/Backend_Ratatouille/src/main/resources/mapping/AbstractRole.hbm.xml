@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.edu.info.lifia.grupo4.model">
+	<class name="AbstractRole" table="ROLES" abstract="true">
+		<id name="id" column="ID_ROLES">
+			<generator class="native" />
+		</id>
+
+		<discriminator column="TYPE_ROLE" type="string" />
+		<one-to-one name="user" property-ref="role" />
+
+		<subclass name="RoleAdmin" discriminator-value="RoleAdmin" />
+
+		<subclass name="RoleResponsible" discriminator-value="RoleResponsible" />
+
+		<subclass name="RoleStandar" discriminator-value="RoleStandar" />
+
+	</class>
+</hibernate-mapping>
