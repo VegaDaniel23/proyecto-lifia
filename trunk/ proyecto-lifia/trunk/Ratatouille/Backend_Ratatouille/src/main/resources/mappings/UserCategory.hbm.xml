@@ -6,14 +6,14 @@
 		<id name="id" column="ID_USER_CATEGORY">
 			<generator class="native" />
 		</id>
-		<joined-subclass name="Visitor" table="VISITOR">
-			<key column="ID_USER_CATEGORY" />
-		</joined-subclass>
-		<joined-subclass name="Dinner" table="DINNER">
-			<key column="ID_USER_CATEGORY" />
-		</joined-subclass>
-		<joined-subclass name="Gourmet" table="GOURMET">
-			<key column="ID_USER_CATEGORY" />
-		</joined-subclass>
+		
+		<discriminator column="TYPE_CATEGORY" type="string" />
+
+		<subclass name="Dinner" discriminator-value="Dinner" />
+
+		<subclass name="Visitor" discriminator-value="Visitor" />
+
+		<subclass name="Gourmet" discriminator-value="Gourmet" />
+		
 	</class>
 </hibernate-mapping>
