@@ -10,43 +10,22 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ar.edu.info.lifia.grupo4.dao.GenericDAO;
 
 public class DBLoader {
 
-	private static SessionFactory sessions;
-	private static ServiceRegistry sr;
 	static final Logger logger = LogManager.getLogger(DBLoader.class.getName());
-	private static ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/context/appContext.xml");
+	private static ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+			"spring/context/appContext.xml");
 
 	public DBLoader() {
 	}
 
 	public static void main(String[] args) {
 		try {
-			logger.info("----------------------- Setting up Hibernate -----------------------");
-			Configuration cfg = new Configuration();
-			cfg.configure();
-
-			logger.info("Droping schema.........");
-			new SchemaExport(cfg).drop(true, true);
-			logger.info("DONE.");
-
-			logger.info("Building sessions.........");
-			sr = new StandardServiceRegistryBuilder().applySettings(
-					cfg.getProperties()).build();
-
-			sessions = cfg.buildSessionFactory(sr);
-
+			
 			// Creo una object properties...para facilitar la carga de los datos
 
 			Properties info = new Properties();
@@ -57,7 +36,8 @@ public class DBLoader {
 			info.load(DBLoader.class.getResourceAsStream("/DBData.properties"));
 
 			Restaurant restaurant = LoadRestaurant(info);
-
+			
+			// Persisto el restaurant creado
 			GenericDAO gDAO = context.getBean(GenericDAO.class);
 			gDAO.save(restaurant);
 
