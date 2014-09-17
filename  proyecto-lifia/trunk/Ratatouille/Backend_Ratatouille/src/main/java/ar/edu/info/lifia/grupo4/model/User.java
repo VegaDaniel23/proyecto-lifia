@@ -11,7 +11,6 @@ public class User {
 	private int score;
 	private AbstractRole role;
 	private UserCategory category;
-	private AdminVotes adminVotes;
 	private Collection<GroupUser> groups;
 	private Collection<Recommendation> recommendations;
 	private Collection<Visit> visits;
@@ -23,7 +22,7 @@ public class User {
 	}
 
 	public User(String dni, String lastName, String name, int score,
-			AbstractRole role, UserCategory category, AdminVotes adminVotes,
+			AbstractRole role, UserCategory category,
 			Collection<GroupUser> groups,
 			Collection<Recommendation> recommendations,
 			Collection<Visit> visits, Restaurant restaurant) {
@@ -34,7 +33,6 @@ public class User {
 		this.score = score;
 		this.role = role;
 		this.category = category;
-		this.adminVotes = adminVotes;
 		this.groups = groups;
 		this.recommendations = recommendations;
 		this.visits = visits;
@@ -132,14 +130,6 @@ public class User {
 
 	public void setRole(AbstractRole role) {
 		this.role = role;
-	}
-
-	public AdminVotes getAdminVotes() {
-		return adminVotes;
-	}
-
-	public void setAdminVotes(AdminVotes adminVotes) {
-		this.adminVotes = adminVotes;
 	}
 
 }
