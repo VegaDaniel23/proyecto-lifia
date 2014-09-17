@@ -134,24 +134,21 @@ public class DBLoader {
 	private static User CreateUser6(Properties info) {
 		User u = new User(info.getProperty("dni6"),
 				info.getProperty("last_name6"), info.getProperty("name6"), 0,
-				new RoleResponsible(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleResponsible(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 		return u;
 	}
 
 	private static User CreateUser5(Properties info) {
 		User u = new User(info.getProperty("dni5"),
 				info.getProperty("last_name5"), info.getProperty("name5"), 0,
-				new RoleStandar(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleStandar(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 		return u;
 	}
 
 	private static User CreateUser4(Properties info) {
 		User u = new User(info.getProperty("dni4"),
 				info.getProperty("last_name4"), info.getProperty("name4"), 0,
-				new RoleStandar(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleStandar(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 		return u;
 	}
 
@@ -170,8 +167,7 @@ public class DBLoader {
 		// TODO Auto-generated method stub
 		User u = new User(info.getProperty("dni3"),
 				info.getProperty("last_name3"), info.getProperty("name3"), 0,
-				new RoleStandar(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleStandar(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 		return u;
 	}
 
@@ -189,7 +185,7 @@ public class DBLoader {
 	private static Restaurant CreateRestaurant(User u, Properties info) {
 		// TODO Auto-generated method stub
 		Restaurant restaurant = new Restaurant(info.getProperty("rest_name1"),
-				u, new HashSet<Vote>(), new HashSet<Comment>(),
+				u, null, new HashSet<Vote>(), new HashSet<Comment>(),
 				new HashSet<Visit>());
 		return restaurant;
 	}
@@ -198,8 +194,7 @@ public class DBLoader {
 		// TODO Auto-generated method stub
 		User u = new User(info.getProperty("dni1"),
 				info.getProperty("last_name1"), info.getProperty("name1"), 0,
-				new RoleStandar(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleStandar(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 
 		return u;
 	}
@@ -208,8 +203,7 @@ public class DBLoader {
 		// TODO Auto-generated method stub
 		User u = new User(info.getProperty("dni2"),
 				info.getProperty("last_name2"), info.getProperty("name2"), 0,
-				new RoleStandar(), new Visitor(), null, new HashSet<GroupUser>(),
-				new HashSet<Recommendation>(), new HashSet<Visit>(), null);
+				new RoleStandar(), new Visitor(), null, new HashSet<Recommendation>(), new HashSet<Visit>(), null);
 
 		return u;
 	}

@@ -7,6 +7,7 @@ public class Restaurant {
 	private Long id;
 	private String name;
 	private User owner;
+	private AdminVotes adminVotes;
 	private Collection<Vote> votes;
 	private Collection<Comment> comments;
 	private Collection<Visit> Visits;
@@ -14,15 +15,19 @@ public class Restaurant {
 	public Restaurant() {
 	}
 
-	public Restaurant(String name, User owner, Collection<Vote> votes,
-			Collection<Comment> comments, Collection<Visit> visits) {
+	public Restaurant(String name, User owner, AdminVotes adminVotes,
+			Collection<Vote> votes, Collection<Comment> comments,
+			Collection<Visit> visits) {
 		super();
 		this.name = name;
 		this.owner = owner;
+		this.adminVotes = adminVotes;
 		this.votes = votes;
 		this.comments = comments;
 		Visits = visits;
 	}
+
+
 
 	public String getName() {
 		return name;
@@ -71,6 +76,14 @@ public class Restaurant {
 
 	public void setVisits(Collection<Visit> visits) {
 		Visits = visits;
+	}
+
+	public AdminVotes getAdminVotes() {
+		return adminVotes;
+	}
+
+	public void setAdminVotes(AdminVotes adminVotes) {
+		this.adminVotes = adminVotes;
 	}
 
 }
