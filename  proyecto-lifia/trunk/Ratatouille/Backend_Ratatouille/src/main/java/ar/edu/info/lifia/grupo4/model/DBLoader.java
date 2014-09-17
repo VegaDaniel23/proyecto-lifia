@@ -17,12 +17,16 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import ar.edu.info.lifia.grupo4.dao.GenericDAO;
 
 public class DBLoader {
 
 	private static SessionFactory sessions;
 	private static ServiceRegistry sr;
 	static final Logger logger = LogManager.getLogger(DBLoader.class.getName());
+	private static ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/context/appContext.xml");
 
 	public DBLoader() {
 	}
@@ -54,22 +58,8 @@ public class DBLoader {
 
 			Restaurant restaurant = LoadRestaurant(info);
 
-			Session session = sessions.openSession();
-			Transaction tx = null;
-			try {
-				tx = session.beginTransaction();
-
-				session.save(restaurant);
-				session.flush();
-				tx.commit();
-			} catch (Exception e) {
-				e.printStackTrace();
-				if (tx != null) {
-					tx.rollback();
-				}
-				session.close();
-			}
-			session.disconnect();
+			GenericDAO gDAO = context.getBean(GenericDAO.class);
+			gDAO.save(restaurant);
 
 			logger.info("DONE.");
 		} catch (Exception e) {
