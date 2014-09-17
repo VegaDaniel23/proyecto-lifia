@@ -13,4 +13,11 @@
 		class="ar.edu.info.lifia.grupo4.daohibernate.GenericDAOhibernate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<bean id="User" class="ar.edu.info.lifia.grupo4.model.User" />
+
+
+	<bean id="UserService" class="ar.edu.info.lifia.grupo4.serviceImpl.UserServiceImpl">
+		<property name="user" ref="User" />
+	</bean>
 </beans>
