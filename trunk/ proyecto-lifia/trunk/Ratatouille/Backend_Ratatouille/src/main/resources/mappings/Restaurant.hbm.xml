@@ -10,10 +10,11 @@
 		<property name="name">
 			<column name="NAME" />
 		</property>
-		<many-to-one name="owner" column="ID_ROL_RESPONSIBLE" not-null="true"
-			cascade="all" />
+		<many-to-one name="owner" column="ID_ROL_RESPONSIBLE"
+			not-null="true" cascade="all" />
 
-		
+		<many-to-one name="adminVotes" column="ADMIN_VOTES" class="AdminVotes"
+			cascade="all" />
 		<set name="comments" cascade="all">
 			<key column="ID_RESTAURANT" />
 			<one-to-many class="Comment" />
