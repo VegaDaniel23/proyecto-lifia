@@ -25,6 +25,9 @@
 		<many-to-one name="role" column="ROLE" cascade="all"
 			unique="true" not-null="true" />
 
+		<many-to-one name="adminVotes" column="ADMIN_VOTES" class="AdminVotes"
+			cascade="all" />
+
 		<set name="groups" table="USER_GROUP_USER" cascade="all">
 			<key column="ID_USER" />
 			<many-to-many class="GroupUser" column="ID_GROUP" />
