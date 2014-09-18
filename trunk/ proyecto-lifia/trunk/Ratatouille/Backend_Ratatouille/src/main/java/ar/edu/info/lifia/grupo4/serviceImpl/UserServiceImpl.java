@@ -15,6 +15,7 @@ public class UserServiceImpl implements UserService {
 	private User user;
 	
 	public void createUser(String dni, String lastName, String name){
+		User user = context.getBean(User.class);
 		this.getUser().setDni(dni);
 		this.getUser().setLastName(lastName);
 		this.getUser().setName(name);
