@@ -26,7 +26,7 @@ public class DBLoader {
 	public static void main(String[] args) {
 		try {
 			
-			// Creo una object properties...para facilitar la carga de los datos
+			// Creo una object properties...
 
 			Properties info = new Properties();
 
