@@ -8,6 +8,33 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<developers>
+		<developer>
+			<id>mcoral</id>
+			<name>Mariel Coral</name>
+			<email>maru.cordal@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>fcepeda</id>
+			<name>Facundo Cepeda</name>
+			<email>ficepeda@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>dvega</id>
+			<name>Daniel Vega</name>
+			<email>betod2008@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
